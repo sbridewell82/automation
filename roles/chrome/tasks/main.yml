@@ -1,7 +1,7 @@
 - name: Install Chrome
-    win_package:
-      path: C:\\Temp\\Chrome\\Installers\\GoogleChromeStandaloneEnterprise64.msi
-      product_id: '{B93553B7-F366-388E-ADB8-EDEAC41EADC2}'
-      wait: yes
-      state: present
+  win_package:
+    path: C:\\Temp\\Chrome\\Installers\\GoogleChromeStandaloneEnterprise64.msi
+    product_id: '{B93553B7-F366-388E-ADB8-EDEAC41EADC2}'
+    wait: yes
+    state: present
    
