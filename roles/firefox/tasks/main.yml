@@ -7,5 +7,6 @@
     win_package:
       path: C:\Windows\Temp\firefox.exe
       product_id: 'Mozilla Firefox'
-      wait: yes
+      arguments: '/q /norestart'
+      #wait: yes
       state: present
