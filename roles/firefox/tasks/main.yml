@@ -1,1 +1,11 @@
-
+---
+  - name: Download Firefox to specified path
+    win_get_url:
+      url: https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US
+      dest: C:\Windows\Temp\firefox.exe
+  - name: Install Firefox
+    win_package:
+      path: C:\Windows\Temp\firefox.exe
+      product_id: auto
+      wait: yes
+      state: present
