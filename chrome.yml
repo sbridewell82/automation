@@ -6,4 +6,4 @@
   become_user: System
   roles:
     #- chrome
-    - {{ required_software }}
+    - "{{ required_software }}"
