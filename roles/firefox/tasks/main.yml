@@ -6,6 +6,6 @@
   - name: Install Firefox
     win_package:
       path: C:\Windows\Temp\firefox.exe
-      product_id: auto
+      product_id: 'Mozilla Firefox'
       wait: yes
       state: present
