@@ -5,4 +5,5 @@
   become_method: runas
   become_user: System
   roles:
-    - chrome
+    #- chrome
+    - {{ required_software }}
