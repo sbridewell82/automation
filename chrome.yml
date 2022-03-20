@@ -1,1 +1,7 @@
-
+---
+  - name: Install Software
+    become: true
+    become_method: runas
+    become_user: System
+    role:
+      - chrome
