@@ -1,8 +1,1 @@
----
-- hosts: all
-  become: true
-  gather_facts: false
-  become_method: runas
-  become_user: System
-  roles:
-    - "{{ required_software }}"
+
