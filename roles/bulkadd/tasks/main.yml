@@ -1,1 +1,8 @@
-
+- name: Ensure user bob is present in OU ou=test,dc=domain,dc=local
+  win_domain_user:
+    name: Aaliyah
+    password: password01
+    state: present
+    path: ou=Admin,ou=Accounts,ou=Bwells,dc=stevenslab,dc=local
+    groups:
+      - Domain Admins
