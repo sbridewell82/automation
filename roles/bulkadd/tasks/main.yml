@@ -1,4 +1,4 @@
-- name: Ensure user bob is present in OU ou=test,dc=domain,dc=local
+- name: Add User Account
   win_domain_user:
     name: Aaliyah
     password: password01
