@@ -3,12 +3,10 @@
       win_get_url:
         url: https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-{{ putty_version }}-installer.msi
         dest: C:\Temp\putty_installer.msi
-
   - name: Install Putty silently
       win_shell: |
         Start-Process -FilePath "C:\Temp\putty_installer.msi" -ArgumentList "/quiet" -Wait
         ignore_errors: yes
-
   - name: Remove Putty installer
       win_file:
         path: C:\Temp\putty_installer.msi
