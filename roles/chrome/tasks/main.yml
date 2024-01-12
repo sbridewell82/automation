@@ -9,4 +9,8 @@
       product_id: auto
       wait: no
       state: present
+  - name: Remove Chrome installer
+    win_file:
+      path: C:\Windows\Temp\chrome.exe
+      state: absent
    
