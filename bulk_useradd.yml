@@ -3,6 +3,7 @@
   become: true
   gather_facts: false
   become_method: runas
-  become_user: Administrator
+  become_user: sbridewell@stevenslab.local
+  become_password: "{{ ansible_pass }}"
   roles:
     - "{{ required_role }}"
