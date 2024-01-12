@@ -1,8 +1,5 @@
 ---
 - hosts: all
-  become: true
   gather_facts: false
-  become_method: runas
-  become_user: STEVENSLAB.LOCAL\sbridewell
   roles:
     - "{{ required_role }}"
