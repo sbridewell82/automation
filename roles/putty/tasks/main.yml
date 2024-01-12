@@ -6,7 +6,7 @@
     when: not (tempfolder is exists)
   - name: Download Putty installer
     win_get_url:
-      url: {{ putty_download_url }}
+      url: "{{ putty_download_url }}"
       #dest: C:\Temp\putty_installer.msi
       dest: "{{ putty_installer }}"
   - name: Install Putty silently
