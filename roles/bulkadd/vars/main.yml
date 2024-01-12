@@ -1,1 +1,10 @@
+---
 
+ad_domain: "stevenslab.local"
+ad_admin_user: "svc_ansible_ldap"
+ad_admin_password: "subst@NTI@l"
+users:
+  - username: "Chris"
+        password: "password1"
+  - username: "Cameron"
+        password: "password2"
