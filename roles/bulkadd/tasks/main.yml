@@ -1,28 +1,26 @@
 ---
 
 - name: Create Users
-      win_domain_user:
-        name: "{{ item.username }}"
-        password: "{{ item.password }}"
-        state: present
-        domain_username: "{{ ad_admin_user }}"
-        domain_password: "{{ ad_admin_password }}"
-      with_items: "{{ users }}"
-
-    - name: Add Users to Group
-      win_domain_group_membership:
-        name: "{{ ad_group }}"
-        members: "{{ item.username }}"
-        state: present
-        domain_username: "{{ ad_admin_user }}"
-        domain_password: "{{ ad_admin_password }}"
-      with_items: "{{ users }}"
-  
-    - name: Move Users to OU
-      win_domain_user:
-        name: "{{ item.username }}"
-        state: present
-        domain_username: "{{ ad_admin_user }}"
-        domain_password: "{{ ad_admin_password }}"
-        ou: "ou=Admin,ou=Accounts,ou=Bwells,dc=stevenslab,dc=local"
-      with_items: "{{ users }}"
+  win_domain_user:
+    name: "{{ item.username }}"
+    password: "{{ item.password }}"
+    state: present
+    domain_username: "{{ ad_admin_user }}"
+    domain_password: "{{ ad_admin_password }}"
+  with_items: "{{ users }}"
+- name: Add Users to Group
+  win_domain_group_membership:
+    name: "{{ ad_group }}"
+    members: "{{ item.username }}"
+    state: present
+    domain_username: "{{ ad_admin_user }}"
+    domain_password: "{{ ad_admin_password }}"
+  with_items: "{{ users }}"
+- name: Move Users to OU
+  win_domain_user:
+    name: "{{ item.username }}"
+    state: present
+    domain_username: "{{ ad_admin_user }}"
+    domain_password: "{{ ad_admin_password }}"
+    ou: "ou=Admin,ou=Accounts,ou=Bwells,dc=stevenslab,dc=local"
+  with_items: "{{ users }}"
