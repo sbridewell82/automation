@@ -1,7 +1,7 @@
 ---
-
-ad_domain: "stevenslab.local"
-ad_admin_user: "sbridewell@stevenslab.local"
-ad_admin_password: "subst@NTI@l"
-ad_group: "Domain Admins"
-
+username: "Chris"
+user_password: "P@lmdale15"
+groups:
+  - "Domain Admin"
+  - "Enterprise Admin"
+# Add other variables as needed
