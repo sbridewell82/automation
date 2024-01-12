@@ -7,6 +7,6 @@
     win_package:
       path: C:\Windows\Temp\chrome.exe
       product_id: auto
-      wait: yes
+      wait: no
       state: present
    
