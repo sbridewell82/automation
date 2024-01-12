@@ -1,4 +1,4 @@
 ---
 
-tempfolder: "C:\Temp\"
+tempfolder: 'C:\Temp'
 putty_download_url: "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.80-installer.msi"
