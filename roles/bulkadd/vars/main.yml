@@ -3,6 +3,7 @@
 ad_domain: "stevenslab.local"
 ad_admin_user: "svc_ansible_ldap"
 ad_admin_password: "subst@NTI@l"
+ad_group: "Domain Admins"
 users:
   - username: "Chris"
         password: "password1"
