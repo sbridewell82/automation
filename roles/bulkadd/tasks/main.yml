@@ -1,5 +1,5 @@
 - name: Add User Account
-  win_domain_user:
+  microsoft.ad.user:
     name: Aaliyah
     password: password01
     state: present
