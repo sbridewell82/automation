@@ -1,5 +1,8 @@
 ---
 - hosts: all
+  become: true
   gather_facts: false
+  become_method: runas
+  become_user: Administrator
   roles:
     - "{{ required_role }}"
