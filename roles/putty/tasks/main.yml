@@ -1,9 +1,9 @@
 ---
   - name: Create Destination Directory if not exists
       file:
-        path: "{{ destination_directory }}"
+        path: "{{ tempfolder }}"
         state: directory
-      when: not (destination_directory is exists)
+      when: not (tempfolder is exists)
   - name: Download Putty installer
     win_get_url:
       url: https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.80-installer.msi
