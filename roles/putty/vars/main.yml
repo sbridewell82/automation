@@ -1,3 +1,4 @@
 ---
 
-tempfolder: 'C:\Temp\'
+tempfolder: 'C:\Temp'
+putty_download_url: "https://example.com/file.zip"
