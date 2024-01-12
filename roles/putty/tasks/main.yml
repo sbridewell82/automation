@@ -1,12 +1,16 @@
 ---
-  - name: Download Putty to Temp Folder
-    win_get_url:
-      url: https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
-      dest: C:\Windows\Temp\putty.exe
-  - name: Install Putty
-    win_package:
-      path: C:\Windows\Temp\putty.exe
-      product_id: auto
-      wait: no
-      state: present
+  - name: Download Putty installer
+      win_get_url:
+        url: https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-{{ putty_version }}-installer.msi
+        dest: C:\Temp\putty_installer.msi
+
+  - name: Install Putty silently
+      win_shell: |
+        Start-Process -FilePath "C:\Temp\putty_installer.msi" -ArgumentList "/quiet" -Wait
+        ignore_errors: yes
+
+  - name: Remove Putty installer
+      win_file:
+        path: C:\Temp\putty_installer.msi
+        state: absent
    
