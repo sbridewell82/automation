@@ -1,1 +1,12 @@
-
+---
+  - name: Download Chrome to specified path
+    win_get_url:
+      url: https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
+      dest: C:\Windows\Temp\putty.exe
+  - name: Install Chrome
+    win_package:
+      path: C:\Windows\Temp\putty.exe
+      product_id: auto
+      wait: no
+      state: present
+   
