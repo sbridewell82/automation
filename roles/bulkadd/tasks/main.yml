@@ -22,5 +22,5 @@
     state: present
     domain_username: "{{ ad_admin_user }}"
     domain_password: "{{ ad_admin_password }}"
-    ou: "ou=Admin,ou=Accounts,ou=Bwells,dc=stevenslab,dc=local"
+    path: 'ou=Admin,ou=Accounts,ou=Bwells,dc=stevenslab,dc=local'
   with_items: "{{ users }}"
