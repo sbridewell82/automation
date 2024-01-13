@@ -1,8 +1,1 @@
 ---
-username: "Chris"
-user_password: "P@lmdale15"
-groups:
-  - "Domain Admin"
-  - "Enterprise Admin"
-allow-world-readable-tmpfiles: true
-# Add other variables as needed
