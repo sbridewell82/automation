@@ -1,11 +1,8 @@
 ---
-  - name: Download Firefox to specified path
+  - name: Download Firefox Installer
     win_get_url:
-      url: https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US
-      dest: C:\Windows\Temp\firefox2.exe
-  - name: Install Firefox
-    win_package:
-      path: C:\Windows\Temp\firefox2.exe
-     product_id: auto
-      wait: no
-      state: present
+      url: "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
+      dest: C:\Temp\firefox-installer.exe
+  - name: Run Firefox Installer
+    win_shell: |
+      Start-Process -FilePath "C:\Temp\firefox-installer.exe" -Wa
