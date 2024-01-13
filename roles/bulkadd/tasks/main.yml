@@ -5,7 +5,7 @@
     $users = Import-Csv "{{ role_path }}/files/users.csv"
     foreach ($user in $users) {
       $securePassword = ConvertTo-SecureString $user.password -AsPlainText -Force
-      New-ADUser -SamAccountName $user.username -UserPrincipalName "$($user.username)@example.com" -Name $user.username -GivenName $user.username -Surname "User" -Enabled $true -AccountPassword $securePassword -PassThru | Move-ADObject -TargetPath $user.ou
+      New-ADUser -SamAccountName $user.username -UserPrincipalName "$($user.username)@stevenslab.local" -Name $user.username -GivenName $user.username -Surname "User" -Enabled $true -AccountPassword $securePassword -PassThru | Move-ADObject -TargetPath $user.ou
     }
   args:
     executable: powershell.exe
