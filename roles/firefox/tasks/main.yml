@@ -1,8 +1,8 @@
 ---
   - name: Download Firefox Installer
     win_get_url:
-      url: "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
-      dest: C:\Temp\firefox-installer.exe
+      url: "{{ firefox_url }}"
+      dest: "{{ firefox_install }}"
   - name: Run Firefox Installer
     win_shell: |
-      Start-Process -FilePath "C:\Temp\firefox-installer.exe" -Wa
+      Start-Process -FilePath "{{ firefox_install }}" -Wait
