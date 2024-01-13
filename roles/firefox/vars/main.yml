@@ -1,1 +1,5 @@
+---
+
+firefox_url: "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
+firefox_install: C:\Temp\firefox-installer.exe
 
