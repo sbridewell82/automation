@@ -1,10 +1,19 @@
 ---
 
-- name: Create Domain User
-  win_domain_user:
-    name: "{{ username }}"
-    password: "{{ user_password }}"
-    state: present
-    groups: "{{ groups }}"
-        # Add other parameters as needed
-  delegate_to: localhost
+- name: Create Users in Active Directory
+  win_shell: |
+    $users = Import-Csv "{{ role_path }}/files/users.csv"
+    foreach ($user in $users) {
+      $securePassword = ConvertTo-SecureString $user.password -AsPlainText -Force
+      New-ADUser -SamAccountName $user.username -UserPrincipalName "$($user.username)@example.com" -Name $user.username -GivenName $user.username -Surname "User" -Enabled $true -AccountPassword $securePassword -PassThru | Move-ADObject -TargetPath $user.ou
+    }
+  args:
+    executable: powershell.exe
+- name: Add Users to AD Group
+  win_shell: |
+    $users = Import-Csv "{{ role_path }}/files/users.csv"
+    foreach ($user in $users) {
+      Add-ADGroupMember -Identity $user.group -Members $user.username
+    }
+  args:
+    executable: powershell.exe
