@@ -1,1 +1,6 @@
+---
+
+admin: OU=Admin,OU=Accounts,OU=Bwells,DC=stevenslab,DC=local
+service: OU=Service,OU=Accounts,OU=Bwells,DC=stevenslab,DC=local
+general: OU=General,OU=Accounts,OU=Bwells,DC=stevenslab,DC=local
 
