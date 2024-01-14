@@ -1,6 +1,9 @@
 ---
 
-- name: Read CSV and Create AD Users
+- name: Read CSV File
+  set_fact:
+    users: "{{ lookup('csvfile', role_path + '/files/users.csv', wantlist=True) }}"
+- name: Create AD Users
   win_domain_user:
     name: "{{ item.first_name[0] | lower }}{{ item.last_name | lower }}"
     firstname: "{{ item.first_name }}" 
@@ -12,10 +15,7 @@
     groups:
       - "{{ item.group }}"
     password_never_expires: false
-  with_items: "{{ users }}"
-  loop_control:
-    loop_var: item
+   loop: "{{ users_data }}"
+   loop_control:
+     loop_var: item
 
-- name: Read CSV File
-  set_fact:
-    users: "{{ lookup('csvfile', role_path + '/files/users.csv', wantlist=True) }}"
