@@ -1,17 +1,17 @@
 ---
 
-- name: Create AD Users
-  win_domain_user:
-    name: "{{ item.first_name[0] | lower }}{{ item.last_name | lower }}"
-    firstname: "{{ item.first_name }}" 
-    surname: "{{ item.last_name }}" 
-    display_name: "{{ item.first_name }}{{ item.last_name }}"
-    password: "{{ item.password }}"
-    state: present
-    path: "{{ item.ou }}"
-    groups:
-      "{{ item.group }}"
-    password_never_expires: false
-  with_items: "{{ users }}"
+    - name: Create AD Users for Multiple Users
+      win_domain_user:
+        name: "{{ item.first_name[0] | lower }}{{ item.last_name | lower }}"
+        firstname: "{{ item.first_name }}" 
+        surname: "{{ item.last_name }}" 
+        display_name: "{{ item.first_name }}{{ item.last_name }}"
+        password: "{{ item.password }}"
+        state: present
+        path: "{{ item.ou }}"
+        groups:
+          - "{{ item.group }}"
+        password_never_expires: false
+      loop: "{{ users }}"
    
 
