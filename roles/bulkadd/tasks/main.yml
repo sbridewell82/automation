@@ -8,9 +8,3 @@
     path: ou=admin,ou=accounts,ou=bwells,dc=stevenslab,dc=local
     groups:
       - Domain Admins
-- name: Add a domain user/group to a domain group
-  win_domain_group_membership:
-    name: Domain Admins
-    members:
-      - stevenslab.local\abridewell
-    state: present
