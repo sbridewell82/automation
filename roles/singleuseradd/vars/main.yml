@@ -2,3 +2,5 @@
 
 first_name: "{{ fn }}"
 last_name: "{{ ln }}"
+ou: "{{ at }}"
+group: "{{ gp }}"
