@@ -8,8 +8,8 @@
     display_name: "{{ first_tname }}{{ last_name }}"
     password: "{{ password }}"
     state: present
-    path: ou=admin,ou=accounts,ou=bwells,dc=stevenslab,dc=local
+    path: "{{ ou }}"
     groups:
-      - Domain Admins
+      "{{ group }}"
     password_never_expires: false
 
