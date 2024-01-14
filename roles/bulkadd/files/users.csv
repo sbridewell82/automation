@@ -1,3 +1,0 @@
-﻿username,password,ou,group
-criley,password01,"OU=Admin,OU=Accounts,OU=Bwells,DC=stevenslab,DC=local",Domain Admins
-cboyd,password01,"OU=Admin,OU=Accounts,OU=Bwells,DC=stevenslab,DC=local",Domain Admins
