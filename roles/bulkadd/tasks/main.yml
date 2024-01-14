@@ -1,25 +1,16 @@
 ---
 
-- name: Ensure user/s are present with address information
+- name: Ensure user bob is created and use custom credentials to 
   win_domain_user:
-    name: cboyd
-    firstname: Cameron
-    surname: Boyd
-    display_name: Cameron Boyd
-    company: Student
+    name: abridewell
     password: subst@NTI@l
     state: present
     path: ou=admin,ou=accounts,ou=bwells,dc=stevenslab,dc=local
-    street: 13163 Fountain Park Drive
-    city: Playa Vista
-    state_province: CA
-    postal_code: 90094
-    country: US
-    attributes:
-      telephoneNumber: 555-654321
+    groups:
+      - Domain Admins
 - name: Add a domain user/group to a domain group
   win_domain_group_membership:
     name: Domain Admins
     members:
-      - stevenslab.local\cboyd
+      - stevenslab.local\abridewell
     state: present
