@@ -5,7 +5,7 @@
     name: "{{ item.username }}"
     password: "{{ item.password }}"
     state: present
-    ou: "{{ item.ou }}"
+    path: "{{ item.ou }}"
   with_items:
     - { username: 'criley', password: 'password1', ou: 'OU=Admin,OU=Accounts,OU=BWELLS,DC=stevenslab,DC=local' }
     - { username: 'cboyd', password: 'password2', ou: 'OU=Admin,OU=Accounts,OU=BWELLS,DC=stevenslab,DC=local' }
