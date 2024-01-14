@@ -1,21 +1,15 @@
 ---
 
-- name: Ensure user bob is created and use custom credentials to 
+- name: Create AD Users
   win_domain_user:
-    name: sbridewell2
-    firstname: Steven 
-    surname: Bridewell JR
-    display_name: Steven Bridewell JR
-    company: Student
-    description: Steven Jr Test Admin Account
-    password: subst@NTI@l
+    name: "{{ item.first_name[0] | lower }}{{ item.last_name | lower }}"
+    firstname: "{{ item.first_name }}" 
+    surname: "{{ item.last_name }}" 
+    display_name: "{{ item.first_name }}{{ item.last_name }}"
+    password: "{{ item.password }}"
     state: present
-    path: ou=admin,ou=accounts,ou=bwells,dc=stevenslab,dc=local
+    path: "{{ item.ou }}"
     groups:
-      - Domain Admins
-    password_never_expires: true
-    street: 12345 Somewhere Lane
-    city: Lancaster
-    state_province: CA
-    postal_code: 93535
-    country: US
+      - "{{ item.group }}"
+    password_never_expires: false
+  with_items: "{{ users }}"
