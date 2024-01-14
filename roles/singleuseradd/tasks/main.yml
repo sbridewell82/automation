@@ -5,7 +5,7 @@
     name: "{{ first_name[0] | lower }}{{ last_name | lower }}"
     firstname: "{{ first_name }}" 
     surname: "{{ last_name }}" 
-    display_name: "{{ first_tname }}{{ last_name }}"
+    display_name: "{{ first_name }}{{ last_name }}"
     password: "{{ password }}"
     state: present
     path: "{{ ou }}"
