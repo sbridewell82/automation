@@ -3,14 +3,9 @@
 users:
   - first_name: John
     last_name: Doe
-    password: "{{ pw }}
-    ou: "{{ at }}"
-    group: "{{ gp }}"
+    
   - first_name: Jane
     last_name: Smith
-    password: "{{ pw }}
-    ou: "{{ at }}"
-    group: "{{ gp }}"
     
 #ou: "{{ at }}"
 #group: "{{ gp }}"
