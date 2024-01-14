@@ -4,6 +4,8 @@ ou: "{{ at }}"
 group: "{{ gp }}"
 password: "{{ pw }}
 
+
+
 users:
   - first_name: "John"
     last_name: "Doe"
