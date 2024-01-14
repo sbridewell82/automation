@@ -1,6 +1,6 @@
 ---
 
-- name: Ensure user bob is present with address information
+- name: Ensure user/s are present with address information
   win_domain_user:
     name: cboyd
     firstname: Cameron
