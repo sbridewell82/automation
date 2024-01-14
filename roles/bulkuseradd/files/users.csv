@@ -1,9 +1,8 @@
 - first_name: "John"
   last_name: "Doe"
-  password: "password1"
       
 
 - first_name: "Jane"
   last_name: "Smith"
-  password: "password2"
+  
         
