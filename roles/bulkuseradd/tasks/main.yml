@@ -12,4 +12,4 @@
     groups:
       - "{{ item.group }}"
     password_never_expires: false
-  with_items: "{{ users }}"
+  with_csv: "users.csv"
