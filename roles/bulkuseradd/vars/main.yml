@@ -1,7 +1,5 @@
 ---
 
-admin: 'OU=Admin,OU=Accounts,OU=Bwells,DC=stevenslab,DC=local'
-general: 'OU=General,OU=Accounts,OU=Bwells,DC=stevenslab,DC=local'
 ou: "{{ at }}"
 group: "{{ gp }}"
 password: "{{ pw }}
