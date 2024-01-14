@@ -6,8 +6,7 @@
     firstname: "{{ first_name }}" 
     surname: "{{ last_name }}" 
     display_name: "{{ first_tname }}{{ last_name }}"
-    company: Student
-    password: subst@NTI@l
+    password: "{{ password }}"
     state: present
     path: ou=admin,ou=accounts,ou=bwells,dc=stevenslab,dc=local
     groups:
