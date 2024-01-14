@@ -10,8 +10,6 @@
     password: subst@NTI@l
     state: present
     path: ou=admin,ou=accounts,ou=bwells,dc=stevenslab,dc=local
-    groups:
-      - Domain Admins
     street: 13163 Fountain Park Drive
     city: Playa Vista
     state_province: CA
@@ -19,3 +17,9 @@
     country: US
     attributes:
       telephoneNumber: 555-654321
+- name: Add a domain user/group to a domain group
+  win_domain_group_membership:
+    name: Domain Admins
+    members:
+      - cboyd
+    state: present
