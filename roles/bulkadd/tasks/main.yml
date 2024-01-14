@@ -12,7 +12,7 @@
     # Add more users as needed
 - name: Add Users to AD Group
   win_domain_group_membership:
-    name: "GroupName"  # Specify the AD group name
+    name: "Domain Admins"  # Specify the AD group name
     members: 
       - "{{ item.username }}"
     state: present
