@@ -3,11 +3,10 @@
 - name: Create AD User
   win_domain_user:
     name: "{{ firstname[0] | lower }}{{ surname | lower }}"
-    firstname: Steven 
-    surname: Bridewell JR
-    display_name: "{{ firstname }}{{ surname }}
+    firstname: Khalan 
+    surname: Bridewell 
+    display_name: "{{ firstname }}{{ surname }}"
     company: Student
-    description: Steven Jr Test Admin Account
     password: subst@NTI@l
     state: present
     path: ou=admin,ou=accounts,ou=bwells,dc=stevenslab,dc=local
