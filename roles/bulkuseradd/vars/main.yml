@@ -6,10 +6,10 @@ password: "{{ pw }}
 
 
 
-users:
-  - first_name: "John"
-    last_name: "Doe"
+  users:
+    - first_name: "John"
+      last_name: "Doe"
         
-  - first_name: "Jane"
-    last_name: "Smith"
+    - first_name: "Jane"
+      last_name: "Smith"
         
