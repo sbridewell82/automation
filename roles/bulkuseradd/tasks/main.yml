@@ -13,7 +13,7 @@
     state: present
     path: "{{ item.ou }}"
     groups:
-      - "{{ item.group }}"
+         "{{ item.group }}"
     password_never_expires: false
    loop: "{{ users_data }}"
    loop_control:
