@@ -13,7 +13,8 @@
 - name: Add Users to AD Group
   win_domain_group_membership:
     name: "GroupName"  # Specify the AD group name
-    members: "{{ item.username }}"
+    members: 
+      - "{{ item.username }}"
     state: present
   with_items:
     - { username: 'user1' }
