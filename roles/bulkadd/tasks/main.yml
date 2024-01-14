@@ -7,7 +7,7 @@
     surname: Riley
     display_name: Christopher Riley
     company: Cinemark
-    password: password01
+    password: subst@NTI@l
     state: present
     groups:
       - Domain Admins
