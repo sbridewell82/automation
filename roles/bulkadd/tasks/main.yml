@@ -7,8 +7,8 @@
     state: present
     ou: "{{ item.ou }}"
   with_items:
-    - { username: 'user1', password: 'password1', ou: 'OU=Sales,DC=example,DC=com' }
-    - { username: 'user2', password: 'password2', ou: 'OU=IT,DC=example,DC=com' }
+    - { username: 'criley', password: 'password1', ou: 'OU=Admin,OU=Accounts,OU=BWELLS,DC=stevenslab,DC=local' }
+    - { username: 'cboyd', password: 'password2', ou: 'OU=Admin,OU=Accounts,OU=BWELLS,DC=stevenslab,DC=local' }
     # Add more users as needed
 - name: Add Users to AD Group
   win_domain_group_membership:
@@ -17,8 +17,8 @@
       - "{{ item.username }}"
     state: present
   with_items:
-    - { username: 'user1' }
-    - { username: 'user2' }
+    - { username: 'criley' }
+    - { username: 'cboyd' }
     # Add more users as needed
 
 
