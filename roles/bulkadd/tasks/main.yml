@@ -1,24 +1,20 @@
 ---
 
-- name: Add Users to Active Directory
+- name: Ensure user bob is present with address information
   win_domain_user:
-    name: "{{ item.username }}"
-    password: "{{ item.password }}"
+    name: criley
+    firstname: Chris
+    surname: Riley
+    display_name: Christopher Riley
+    company: Cinemark
+    password: password01
     state: present
-    path: "{{ item.ou }}"
-  with_items:
-    - { username: 'criley', password: 'password1', ou: 'OU=Admin,OU=Accounts,OU=BWELLS,DC=stevenslab,DC=local' }
-    - { username: 'cboyd', password: 'password2', ou: 'OU=Admin,OU=Accounts,OU=BWELLS,DC=stevenslab,DC=local' }
-    # Add more users as needed
-- name: Add Users to AD Group
-  win_domain_group_membership:
-    name: "Domain Admins"  # Specify the AD group name
-    members: 
-      - "{{ item.username }}"
-    state: present
-  with_items:
-    - { username: 'criley' }
-    - { username: 'cboyd' }
-    # Add more users as needed
-
-
+    groups:
+      - Domain Admins
+    street: 13163 Fountain Park Drive
+    city: Playa Vista
+    state_province: CA
+    postal_code: 90094
+    country: US
+    attributes:
+      telephoneNumber: 555-123456
