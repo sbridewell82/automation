@@ -7,9 +7,7 @@ users:
   - first_name: Jane
     last_name: Smith
     
-#ou: "{{ at }}"
-#group: "{{ gp }}"
-#password: "{{ pw }}
+
 
 
 
