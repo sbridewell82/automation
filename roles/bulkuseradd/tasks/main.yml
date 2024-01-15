@@ -6,11 +6,14 @@
     firstname: "{{ item.first_name }}" 
     surname: "{{ item.last_name }}" 
     display_name: "{{ item.first_name }}{{ item.last_name }}"
-    #password: "{{ pw }}"
+    password: "{{ item.password }}"
     state: present
+    path: "{{ item.ou }}"
+    groups:
+      - "{{ item.group }}"
+    #password: "{{ pw }}"
     #path: "{{ at }}"
     #groups:
-        - "{{ gp }}"
     password_never_expires: false
   loop: "{{ users }}"
    
