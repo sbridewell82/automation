@@ -12,6 +12,6 @@
     groups:
         - "{{ gp }}"
     password_never_expires: false
-loop: "{{ users }}"
+  loop: "{{ users }}"
    
 
