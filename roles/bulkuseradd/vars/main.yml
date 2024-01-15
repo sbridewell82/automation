@@ -1,11 +1,17 @@
 ---
 
 users:
-  - first_name: John
-    last_name: Doe
+  - first_name: Cynthia  
+    last_name: Houlker
+    password: "{{ pw }}"
+    ou: "{{ at }}"
+    group: "{{ gp }}"
     
-  - first_name: Jane
-    last_name: Smith
+  - first_name: Lenny
+    last_name: Houlker
+    password: "{{ pw }}"
+    ou: "{{ at }}"
+    group: "{{ gp }}"
     
 
 
