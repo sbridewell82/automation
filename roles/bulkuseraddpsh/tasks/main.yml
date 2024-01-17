@@ -15,9 +15,9 @@
 
       # Loop through each user and create the account
       foreach ($user in $userList) {
-      $userLogonName = $user.UserLogonName
-      $firstName = $user.FirstName
-      $lastName = $user.LastName
+          $userLogonName = $user.UserLogonName
+          $firstName = $user.FirstName
+          $lastName = $user.LastName
 
       # Create the user account
       $userParams = @{
