@@ -1,5 +1,6 @@
 ---
 
 ou: OU="{{ at }}",OU=Accounts,OU=Bwells,DC=stevenslab,DC=local
+domain_name: stevenslab.local
 
 
