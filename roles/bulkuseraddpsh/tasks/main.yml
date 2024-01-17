@@ -2,5 +2,5 @@
 
   - name: Copy PowerShell script template
     template:
-     src: script.ps1.j2
+     src: bulkadd.ps1.j2
      dest: C:\Temp\bulkadd.ps1
