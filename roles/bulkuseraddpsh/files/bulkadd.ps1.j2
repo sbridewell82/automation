@@ -26,8 +26,8 @@ foreach ($user in $userList) {
         'DisplayName' = "$firstName $lastName"
         'Enabled' = $true
         'AccountPassword' = (ConvertTo-SecureString -AsPlainText $defaultPassword -Force)
-        'ChangePasswordAtLogon' = $true
-        'Description' = "User account for $userLogonName"
+        'ChangePasswordAtLogon' = $false
+        'Description' = "$userLogonName"
         'Path' = $targetOU
     }
 
