@@ -2,8 +2,8 @@
 
   - name: Add Bulk Users
     win_shell: |
-      $domain = "{{ dn }}"
-      $securityGroup = "{{ grp }}"
+      $domain = "{{ domain_name }}"
+      $securityGroup = "{{ group }}"
       $targetOU = "{{ ou }}"
       $defaultPassword = "{{ pw }}"  # Set your default password here
 
