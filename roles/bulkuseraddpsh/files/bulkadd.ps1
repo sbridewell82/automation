@@ -1,7 +1,7 @@
 # Define domain information
-$domain = "lmc-aero-up.com"
-$securityGroup = "mp-pdev-hp-general"
-$targetOU = "OU=Internal,OU=Standard,OU=Accounts,DC=lmc-aero-up,DC=com"
+$domain = "{{ dn }}"
+$securityGroup = "{{ grp }}"
+$targetOU = "{{ ou }}"
 $defaultPassword = "DefaultPassword123"  # Set your default password here
 
 # Specify the path to the CSV file
