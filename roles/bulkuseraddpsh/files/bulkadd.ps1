@@ -5,7 +5,7 @@ $targetOU = "{{ ou }}"
 $defaultPassword = "{{ pw }}"  # Set your default password here
 
 # Specify the path to the CSV file
-$csvFilePath = "C:\Path\To\Your\UserList.csv"  # Update this with the actual path
+$csvFilePath = "{{ role_path }}/files/UserList.csv"  # Update this with the actual path
 
 # Import user details from CSV
 $userList = Import-Csv $csvFilePath
