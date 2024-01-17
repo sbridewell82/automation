@@ -1,6 +1,6 @@
 ---
 
-  - name: Run PowerShell script
+  - name: Add Bulk Users
     win_shell: |
       $domain = "{{ dn }}"
       $securityGroup = "{{ grp }}"
