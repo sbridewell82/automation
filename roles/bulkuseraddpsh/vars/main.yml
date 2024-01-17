@@ -1,5 +1,5 @@
 ---
 
-ou: OU="{{ selected_ou }}",OU=Accounts,OU=Bwells,DC=stevenslab,DC=local
+ou: OU={{ selected_ou }},OU=Accounts,OU=Bwells,DC=stevenslab,DC=local
 
 
