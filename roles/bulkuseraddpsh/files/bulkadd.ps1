@@ -2,7 +2,7 @@
 $domain = "{{ dn }}"
 $securityGroup = "{{ grp }}"
 $targetOU = "{{ ou }}"
-$defaultPassword = "DefaultPassword123"  # Set your default password here
+$defaultPassword = "{{ pw }}"  # Set your default password here
 
 # Specify the path to the CSV file
 $csvFilePath = "C:\Path\To\Your\UserList.csv"  # Update this with the actual path
