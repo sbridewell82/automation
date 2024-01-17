@@ -1,46 +1,41 @@
 ---
 
-  #- name: Copy PowerShell script template
-    #template:
-     #src: bulkadd.ps1.j2
-     #dest: C:\Temp\bulkadd.ps1
+  - name: Run PowerShell script
+    win_shell: |
+      $domain = "{{ dn }}"
+      $securityGroup = "{{ grp }}"
+      $targetOU = "{{ ou }}"
+      $defaultPassword = "{{ pw }}"  # Set your default password here
 
-     - name: Run PowerShell script
-       win_shell: |
-         $domain = "{{ ad_domain }}"
-         $securityGroup = "{{ ad_security_group }}"
-         $targetOU = "{{ ad_target_ou }}"
-         $defaultPassword = "{{ ad_default_password }}"
+      # Specify the path to the CSV file
+      $csvFilePath = "{{ role_path }}/files/UserList.csv"  # Update this with the actual path
 
-         # Specify the path to the CSV file
-         $csvFilePath = "{{ csv_file_path }}"
+      # Import user details from CSV
+      $userList = Import-Csv $csvFilePath
 
-         # Import user details from CSV
-         $userList = Import-Csv $csvFilePath
+      # Loop through each user and create the account
+      foreach ($user in $userList) {
+      $userLogonName = $user.UserLogonName
+      $firstName = $user.FirstName
+      $lastName = $user.LastName
 
-         # Loop through each user and create the account
-         foreach ($user in $userList) {
-            $userLogonName = $user.UserLogonName
-            $firstName = $user.FirstName
-            $lastName = $user.LastName
+      # Create the user account
+      $userParams = @{
+          'SamAccountName'  = $userLogonName
+          'UserPrincipalName' = "$userLogonName@$domain"
+          'Name' = $userLogonName
+          'GivenName' = $firstName
+          'Surname' = $lastName
+          'DisplayName' = "$firstName $lastName"
+          'Enabled' = $true
+          'AccountPassword' = (ConvertTo-SecureString -AsPlainText $defaultPassword -Force)
+          'ChangePasswordAtLogon' = $false
+          'Description' = "{{ at }} account for $userLogonName"
+          'Path' = $targetOU
+      }
 
-            # Create the user account
-            $userParams = @{
-                'SamAccountName'  = $userLogonName
-                'UserPrincipalName' = "$userLogonName@$domain"
-                'Name' = $userLogonName
-                'GivenName' = $firstName
-                'Surname' = $lastName
-                'DisplayName' = "$firstName $lastName"
-                'Enabled' = $true
-                'AccountPassword' = (ConvertTo-SecureString -AsPlainText $defaultPassword -Force)
-                'ChangePasswordAtLogon' = $true
-                'Description' = "User account for $userLogonName"
-                'Path' = $targetOU
-            }
+      New-ADUser @userParams
 
-            New-ADUser @userParams
-
-            # Add user to the security group
-            Add-ADGroupMember -Identity $securityGroup -Members $userLogonName
-        } 
+      # Add user to the security group
+      Add-ADGroupMember -Identity $securityGroup -Members $userLogonName
+}
